@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded rectangle -->
+  <rect width="512" height="512" rx="128" fill="url(#bg)"/>
+  
+  <!-- Modern Geometric Eco Building / Leaf icon -->
+  <!-- Building outline -->
+  <path d="M128 384V208L256 128L384 208V384H128Z" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity="0.3"/>
+  <line x1="256" y1="128" x2="256" y2="384" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.2"/>
+  <line x1="128" y1="288" x2="384" y2="288" stroke="#ffffff" stroke-width="16" stroke-linecap="round" opacity="0.2"/>
+
+  <!-- Centered Vibrant Leaf Symbol -->
+  <path d="M360 170C360 170 340 290 256 320C172 290 152 170 152 170C152 170 236 150 256 220C276 150 360 170 360 170Z" fill="url(#leaf)"/>
+  <path d="M256 220V340" stroke="#059669" stroke-width="16" stroke-linecap="round"/>
+  
+  <!-- Subtle circular accent -->
+  <circle cx="256" cy="150" r="14" fill="#a7f3d0"/>
+</svg>

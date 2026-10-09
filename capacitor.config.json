@@ -1,0 +1,9 @@
+{
+  "appId": "com.ecoconstruct.pro",
+  "appName": "EcoConstruct Pro",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
