@@ -19,10 +19,10 @@ export default function ProductCard({
   };
 
   return (
-    <div className="group bg-slate-800/90 rounded-2xl border border-slate-700/80 overflow-hidden flex flex-col hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-950/30 transition-all duration-300">
+    <div className="group bg-[#405847] rounded-2xl border border-[#526B58] overflow-hidden flex flex-col hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-950/30 transition-all duration-300">
       
       {/* Product Image Area */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900 cursor-pointer" onClick={() => onOpenSpecs(product)}>
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-bg-[#34483B] cursor-pointer" onClick={() => onOpenSpecs(product)}>
         <img
           src={imgSrc}
           alt={product.title}
@@ -32,24 +32,24 @@ export default function ProductCard({
         />
 
         {/* Gradient Overlay for Tag Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-black/20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#263D30]/80 via-transparent to-black/10 pointer-events-none" />
 
         {/* Category Badge */}
         <div className="absolute top-3 left-3 flex flex-wrap gap-1">
-          <span className="px-2.5 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-xs font-semibold shadow-sm">
+          <span className="px-2.5 py-1 rounded-lg bg-[#263D30]/95 backdrop-blur-md text-emerald-300 border border-emerald-500/30 text-xs font-semibold shadow-sm">
             {product.category}
           </span>
         </div>
 
         {/* Eco Rating Badge */}
-        <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900/85 backdrop-blur-md border border-slate-700 text-amber-300 text-xs font-bold shadow-sm">
+        <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#263D30]/95 backdrop-blur-md border border-slate-700 text-amber-300 text-xs font-bold shadow-sm">
           <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           <span>{product.ecoRating}.0</span>
         </div>
 
         {/* Quick Specs Hover Trigger on desktop */}
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px] pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-slate-600 shadow-lg">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 text-white text-xs font-medium border border-[#657B67] shadow-lg">
             <Eye className="w-3.5 h-3.5 text-emerald-400" />
             Quick View Specs
           </span>
@@ -64,14 +64,14 @@ export default function ProductCard({
             {product.certifications?.slice(0, 3).map((cert, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-md bg-emerald-950/60 text-emerald-300 border border-emerald-800/50"
+                className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#263D30] text-[#A9E6C2] border border-[#526B58]"
               >
                 <ShieldCheck className="w-2.5 h-2.5 text-emerald-400" />
                 {cert}
               </span>
             ))}
             {product.certifications && product.certifications.length > 3 && (
-              <span className="text-[10px] text-slate-400 self-center font-medium">
+              <span className="text-[10px] text-[#B9CBB7] self-center font-medium">
                 +{product.certifications.length - 3} more
               </span>
             )}
@@ -86,7 +86,7 @@ export default function ProductCard({
           </h3>
 
           {/* Short Description */}
-          <p className="mt-1.5 text-xs sm:text-sm text-slate-300 line-clamp-2 leading-relaxed">
+          <p className="mt-1.5 text-xs sm:text-sm text-[#D7E3D4] line-clamp-2 leading-relaxed">
             {product.description}
           </p>
 
@@ -100,13 +100,13 @@ export default function ProductCard({
         </div>
 
         {/* Pricing & Actions Footer */}
-        <div className="pt-3 border-t border-slate-700/60 flex items-center justify-between gap-2">
+        <div className="pt-3 border-t border-[#526B58] flex items-center justify-between gap-2">
           
           <div>
-            <div className="text-xs text-slate-400">Unit Price</div>
+            <div className="text-xs text-[#B9CBB7]">Unit Price</div>
             <div className="text-lg sm:text-xl font-extrabold text-white">
               {formatPrice(product.price, currency)}
-              <span className="text-xs font-normal text-slate-400 ml-1">
+              <span className="text-xs font-normal text-[#B9CBB7] ml-1">
                 /{product.unit || 'unit'}
               </span>
             </div>
@@ -116,10 +116,10 @@ export default function ProductCard({
             {/* Specs Preview Modal Button */}
             <button
               onClick={() => onOpenSpecs(product)}
-              className="p-2.5 sm:px-3 sm:py-2 rounded-xl bg-slate-700/80 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium border border-slate-600 transition-colors touch-target flex items-center gap-1"
+              className="p-2.5 sm:px-3 sm:py-2 rounded-xl bg-[#49614D] hover:bg-[#58735B] text-[#F0F5ED] hover:text-white text-xs font-medium border border-[#657B67] transition-colors touch-target flex items-center gap-1"
               title="View Technical Specs"
             >
-              <Eye className="w-4 h-4 text-slate-300" />
+              <Eye className="w-4 h-4 text-[#D7E3D4]" />
               <span className="hidden sm:inline">Specs</span>
             </button>
 

@@ -10,7 +10,7 @@ export default function MobileBottomNav({
   onOpenOrdersModal
 }) {
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-lg border-t border-slate-800 shadow-2xl safe-area-pb">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#F6F5EF]/95 backdrop-blur-lg border-t border-[#D8DED3] shadow-lg safe-area-pb">
       <div className="grid grid-cols-5 items-center h-16 px-1">
         
         {/* Catalog / Home */}
@@ -20,7 +20,7 @@ export default function MobileBottomNav({
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className={`flex flex-col items-center justify-center h-full touch-target transition-colors ${
-            activeTab === 'catalog' ? 'text-emerald-400 font-semibold' : 'text-slate-400 hover:text-slate-200'
+            activeTab === 'catalog' ? 'text-emerald-400 font-semibold' : 'text-[#718078] hover:text-[#087F5B]'
           }`}
         >
           <Home className="w-5 h-5 mb-0.5" />

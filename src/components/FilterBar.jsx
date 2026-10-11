@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter, Star, Sparkles, Check, X } from 'lucide-react';
+import { Filter, Star, Check, X } from 'lucide-react';
 import { CATEGORIES, CERTIFICATIONS } from '../data/defaultProducts';
 
 export default function FilterBar({
@@ -27,29 +27,33 @@ export default function FilterBar({
     setSelectedCertifications([]);
   };
 
-  const hasActiveFilters = selectedCategory !== 'All' || minRating > 0 || selectedCertifications.length > 0;
+  const hasActiveFilters =
+    selectedCategory !== 'All' ||
+    minRating > 0 ||
+    selectedCertifications.length > 0;
 
   return (
-    <div className="bg-slate-900 border-b border-slate-800/80 sticky top-16 sm:top-20 z-30 py-3 shadow-md">
+    <div className="bg-[#E8EFE5] border-b border-[#D0DFCE] sticky top-16 sm:top-20 z-30 py-3 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
-        
-        {/* Category Pills (Horizontally scrollable on mobile) */}
+
+        {/* Category Filters */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar scroll-smooth">
-          <span className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 flex-shrink-0 mr-1">
-            <Filter className="w-3.5 h-3.5 text-emerald-400" />
+          <span className="text-xs font-semibold text-[#43594A] flex items-center gap-1.5 flex-shrink-0 mr-1">
+            <Filter className="w-3.5 h-3.5 text-[#24563B]" />
             <span>Category:</span>
           </span>
 
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
+
             return (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all touch-target flex-shrink-0 ${
+                className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all touch-target flex-shrink-0 border ${
                   isSelected
-                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/30 font-semibold'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700/60'
+                    ? 'bg-[#087F5B] text-white border-[#087F5B] shadow-sm font-semibold'
+                    : 'bg-[#F8FAF6] text-[#35483A] border-[#C8D8C4] hover:bg-[#D8E6D3] hover:border-[#9CB89A]'
                 }`}
               >
                 {cat}
@@ -58,37 +62,47 @@ export default function FilterBar({
           })}
         </div>
 
-        {/* Secondary Filters Row: Eco-Rating Toggle, Certifications, Sort */}
+        {/* Rating, Certifications and Sorting */}
         <div className="flex flex-wrap items-center justify-between gap-3 pt-1 text-xs">
-          
+
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            {/* Eco-Rating Filter Toggle */}
-            <div className="flex items-center gap-1.5 bg-slate-800/80 px-2.5 py-1 rounded-xl border border-slate-700">
-              <span className="text-slate-400 font-medium flex items-center gap-1">
-                <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
+
+            {/* Eco-Rating */}
+            <div className="flex items-center gap-1.5 bg-[#F8FAF6] px-2.5 py-1.5 rounded-xl border border-[#D0DFCE]">
+              <span className="text-[#43594A] font-medium flex items-center gap-1">
+                <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
                 <span>Eco-Rating:</span>
               </span>
+
               <button
                 onClick={() => setMinRating(0)}
                 className={`px-2 py-0.5 rounded-lg text-xs font-medium transition-colors ${
-                  minRating === 0 ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  minRating === 0
+                    ? 'bg-[#087F5B] text-white'
+                    : 'text-[#43594A] hover:bg-[#E1EBDD]'
                 }`}
               >
                 All
               </button>
+
               <button
                 onClick={() => setMinRating(4)}
                 className={`px-2 py-0.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-0.5 ${
-                  minRating === 4 ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  minRating === 4
+                    ? 'bg-[#087F5B] text-white'
+                    : 'text-[#43594A] hover:bg-[#E1EBDD]'
                 }`}
               >
                 <span>4+</span>
                 <Star className="w-2.5 h-2.5 fill-current" />
               </button>
+
               <button
                 onClick={() => setMinRating(5)}
                 className={`px-2 py-0.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-0.5 ${
-                  minRating === 5 ? 'bg-emerald-600 text-white' : 'text-slate-400 hover:text-slate-200'
+                  minRating === 5
+                    ? 'bg-[#087F5B] text-white'
+                    : 'text-[#43594A] hover:bg-[#E1EBDD]'
                 }`}
               >
                 <span>5</span>
@@ -96,21 +110,22 @@ export default function FilterBar({
               </button>
             </div>
 
-            {/* Certifications Quick Filters */}
+            {/* Certification Filters */}
             <div className="hidden lg:flex items-center gap-1.5">
               {CERTIFICATIONS.slice(0, 3).map((cert) => {
                 const active = selectedCertifications.includes(cert);
+
                 return (
                   <button
                     key={cert}
                     onClick={() => toggleCert(cert)}
                     className={`px-2.5 py-1 rounded-lg border text-xs transition-colors flex items-center gap-1 ${
                       active
-                        ? 'bg-emerald-950/80 border-emerald-600 text-emerald-300'
-                        : 'bg-slate-800/60 border-slate-700/80 text-slate-400 hover:text-slate-200'
+                        ? 'bg-[#D8E9D7] border-[#87AE8A] text-[#24563B]'
+                        : 'bg-[#F8FAF6] border-[#D0DFCE] text-[#43594A] hover:bg-[#E1EBDD]'
                     }`}
                   >
-                    {active && <Check className="w-3 h-3 text-emerald-400" />}
+                    {active && <Check className="w-3 h-3 text-[#087F5B]" />}
                     <span>{cert}</span>
                   </button>
                 );
@@ -121,7 +136,7 @@ export default function FilterBar({
             {hasActiveFilters && (
               <button
                 onClick={clearAllFilters}
-                className="flex items-center gap-1 text-slate-400 hover:text-rose-400 transition-colors ml-1"
+                className="flex items-center gap-1 text-[#43594A] hover:text-rose-600 transition-colors ml-1"
                 title="Clear Filters"
               >
                 <X className="w-3.5 h-3.5" />
@@ -130,16 +145,16 @@ export default function FilterBar({
             )}
           </div>
 
-          {/* Right: Results Count & Sort Dropdown */}
+          {/* Results Count and Sorting */}
           <div className="flex items-center gap-3 ml-auto">
-            <span className="text-slate-400">
-              Showing <strong className="text-white">{totalResults}</strong> eco materials
+            <span className="text-[#43594A]">
+              Showing <strong className="text-[#26372D]">{totalResults}</strong> eco materials
             </span>
 
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-slate-800 border border-slate-700 text-slate-200 rounded-lg px-2.5 py-1 text-xs focus:ring-1 focus:ring-emerald-500 focus:outline-none"
+              className="bg-[#F8FAF6] border border-[#C8D8C4] text-[#26372D] rounded-lg px-2.5 py-2 text-xs focus:ring-1 focus:ring-[#087F5B] focus:outline-none"
             >
               <option value="featured">Featured</option>
               <option value="price-asc">Price: Low to High</option>
@@ -149,7 +164,6 @@ export default function FilterBar({
           </div>
 
         </div>
-
       </div>
     </div>
   );

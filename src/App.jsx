@@ -245,7 +245,7 @@ export default function App() {
   const totalCartUSD = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
-    <div className={`min-h-screen flex flex-col ${currentTheme.bgPage} text-slate-100 selection:bg-emerald-600 selection:text-white pb-20 md:pb-0 transition-colors duration-700`}>
+    <div className={`min-h-screen flex flex-col ${currentTheme.bgPage} text-slate-100 selection:bg-emerald-600 selection:text-[#263D30] pb-20 md:pb-0 transition-colors duration-700`}>
       
       {/* Toast Notification Alert Banner */}
       {toastMessage && (
@@ -302,7 +302,7 @@ export default function App() {
         {searchQuery && (
           <div className="mb-6 flex items-center justify-between p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-xs">
             <span>
-              Searching for: <strong className="text-white">"{searchQuery}"</strong>
+              Searching for: <strong className="text-[#263D30]">"{searchQuery}"</strong>
             </span>
             <button
               onClick={() => setSearchQuery('')}
@@ -328,11 +328,11 @@ export default function App() {
           </div>
         ) : (
           <div className="py-20 text-center space-y-4 max-w-md mx-auto">
-            <div className="w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto text-slate-500">
+            <div className="w-16 h-16 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center mx-auto text-[#526B58]">
               <Leaf className="w-8 h-8 text-slate-500" />
             </div>
-            <h3 className="text-lg font-bold text-white">No eco-materials found</h3>
-            <p className="text-xs sm:text-sm text-slate-400">
+            <h3 className="text-lg font-bold text-[#263D30]">No eco-materials found</h3>
+            <p className="text-xs sm:text-sm text-[#405847]">
               No materials match your current category, rating, or search filter.
             </p>
             <div className="flex items-center justify-center gap-3 pt-2">
@@ -343,13 +343,13 @@ export default function App() {
                   setMinRating(0);
                   setSelectedCertifications([]);
                 }}
-                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 transition-colors"
+                className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-[#263D30] text-xs font-semibold border border-slate-700 transition-colors"
               >
                 Reset All Filters
               </button>
               <button
                 onClick={() => setIsAddProductOpen(true)}
-                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md transition-colors"
+                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-[#263D30] text-xs font-semibold shadow-md transition-colors"
               >
                 + Add Custom Material
               </button>
@@ -360,18 +360,20 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-16 bg-slate-950 border-t border-slate-800 text-xs text-slate-400 py-12">
+      ```jsx
+<footer className="mt-16 bg-[#DCE8D8] border-t border-[#C5D5C1] text-xs text-[#405847] py-12">
+```
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3 md:col-span-2">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
+                <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-[#263D30]">
                   <Leaf className="w-5 h-5" />
                 </div>
-                <span className="font-extrabold text-base text-white">EcoConstruct Pro</span>
+                <span className="font-extrabold text-base text-[#263D30]">EcoConstruct Pro</span>
               </div>
-              <p className="text-slate-400 max-w-md text-xs leading-relaxed">
+              <p className="text-[#405847] max-w-md text-xs leading-relaxed">
                 The leading marketplace for carbon-neutral, circular, and certified green construction materials. Empowering commercial contractors, green architects, and homebuilders to build a sustainable planet.
               </p>
               <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold">
@@ -381,7 +383,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white uppercase tracking-wider mb-3">Categories</h4>
+              <h4 className="font-bold text-[#263D30] uppercase tracking-wider mb-3">Categories</h4>
               <ul className="space-y-1.5">
                 <li><button onClick={() => { setSelectedCategory('Bamboo'); window.scrollTo({ top: 350, behavior: 'smooth' }); }} className="hover:text-emerald-400">Strand Bamboo Flooring</button></li>
                 <li><button onClick={() => { setSelectedCategory('Roofing'); window.scrollTo({ top: 350, behavior: 'smooth' }); }} className="hover:text-emerald-400">Recycled Steel & Sedum Roofs</button></li>
@@ -391,7 +393,7 @@ export default function App() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white uppercase tracking-wider mb-3">PWA Platform</h4>
+              <h4 className="font-bold text-[#263D30] uppercase tracking-wider mb-3">PWA Platform</h4>
               <ul className="space-y-1.5">
                 <li><button onClick={() => setIsInstallModalOpen(true)} className="hover:text-emerald-400">Install Mobile App</button></li>
                 <li><button onClick={() => setIsOrderHistoryOpen(true)} className="hover:text-emerald-400">Track Order Status</button></li>
@@ -401,7 +403,7 @@ export default function App() {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+          <div className="pt-6 border-t border-[#C5D5C1] flex flex-col sm:flex-row items-center justify-between gap-4 text-[#526B58] text-[11px]">
             <div>
               © {new Date().getFullYear()} EcoConstruct Pro Inc. All environmental metrics certified.
             </div>
