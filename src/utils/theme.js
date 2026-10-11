@@ -17,10 +17,10 @@ export const THEMES = {
     tagline: 'Fresh Emerald & Teal Dawn',
     timeRange: '05:00 - 11:59',
     // Ambient backgrounds
-    bgPage: 'bg-slate-900',
-    bgGradient: 'from-emerald-950/40 via-slate-900 to-teal-950/30',
-    headerBg: 'bg-slate-900/90 border-emerald-900/40',
-    heroBg: 'bg-gradient-to-b from-emerald-950/30 via-slate-900 to-slate-900',
+    bgPage: 'bg-[#F6F5EF]',
+    bgGradient: 'from-[#E8F0E5] via-[#F6F5EF] to-[#DCE8D8]',
+    headerBg: 'bg-[#F6F5EF]/95 border-[#C5D5C1]',
+    heroBg: 'bg-gradient-to-b from-[#E8F0E5] via-[#F6F5EF] to-[#F6F5EF]',
     // Accents
     accentPrimary: 'bg-emerald-600 hover:bg-emerald-500 text-white',
     accentText: 'text-emerald-400',
@@ -37,10 +37,10 @@ export const THEMES = {
     tagline: 'Warm Solar-Amber & Golden Green',
     timeRange: '12:00 - 16:59',
     // Ambient backgrounds
-    bgPage: 'bg-slate-900',
-    bgGradient: 'from-amber-950/35 via-slate-900 to-emerald-950/25',
-    headerBg: 'bg-slate-900/90 border-amber-900/40',
-    heroBg: 'bg-gradient-to-b from-amber-950/25 via-slate-900 to-slate-900',
+    bgPage: 'bg-[#F6F5EF]',
+    bgGradient: 'from-[#F0F0E4] via-[#F6F5EF] to-[#DCE8D8]',
+    headerBg: 'bg-[#F6F5EF]/95 border-[#C5D5C1]',
+    heroBg: 'bg-gradient-to-b from-[#F0F0E4] via-[#F6F5EF] to-[#F6F5EF]',
     // Accents
     accentPrimary: 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold',
     accentText: 'text-amber-400',
@@ -57,12 +57,11 @@ export const THEMES = {
     tagline: 'Sleek Dark Slate & Midnight Forest',
     timeRange: '17:00 - 04:59',
     // Ambient backgrounds
-    bgPage: 'bg-slate-950',
-    bgGradient: 'from-slate-950 via-slate-900 to-emerald-950/30',
-    headerBg: 'bg-slate-950/90 border-slate-800',
-    heroBg: 'bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950',
-    // Accents
-    accentPrimary: 'bg-emerald-600 hover:bg-emerald-500 text-white',
+    bgPage: 'bg-[#F6F5EF]',
+    bgGradient: 'from-[#E8F0E5] via-[#F6F5EF] to-[#DCE8D8]',
+    headerBg: 'bg-[#F6F5EF]/95 border-[#C5D5C1]',
+    heroBg: 'bg-gradient-to-b from-[#E8F0E5] via-[#F6F5EF] to-[#F6F5EF]',
+    accentPrimary: 'bg-[#078765] hover:bg-[#067455] text-white',
     accentText: 'text-emerald-300',
     accentGradientText: 'from-emerald-300 via-teal-200 to-cyan-300',
     badgeBg: 'bg-slate-800 text-emerald-300 border-slate-700',

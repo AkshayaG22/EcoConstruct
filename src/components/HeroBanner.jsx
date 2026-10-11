@@ -17,12 +17,8 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         {/* Dynamic Time-of-Day Ambient Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-slate-300 text-xs font-medium mb-4 shadow-sm backdrop-blur-sm animate-fadeIn">
-          {getPeriodIcon()}
-          <span className="font-semibold text-white">{theme.name}</span>
-          <span className="text-slate-500">•</span>
-          <span className="text-slate-400 text-[11px]">{theme.tagline}</span>
-        </div>
+        {/* Dynamic Time-of-Day Ambient Badge removed */}
+```
 
         {/* Clean, Modern Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
@@ -53,7 +49,7 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
 
           <button
             onClick={onOpenAddModal}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-medium text-xs sm:text-sm border border-slate-700 transition-colors touch-target"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#078765] hover:bg-[#067455] text-white hover:text-white font-medium text-xs sm:text-sm border border-slate-700 transition-colors touch-target"
           >
             <PlusCircle className="w-4 h-4 text-emerald-400" />
             <span>+ Add Material</span>

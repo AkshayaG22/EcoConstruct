@@ -125,24 +125,24 @@ export default function AddProductModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn">
       {/* Backdrop */}
       <div 
-        className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-[#F6F5EF]/80 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-2xl bg-slate-900 border border-slate-750 rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-2xl bg-[#F6F5EF] border border-slate-750 rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="p-4 sm:p-5 border-b border-slate-800 bg-slate-850 flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-[#C5D5C1] bg-slate-850 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
               <PlusCircle className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+              <h2 className="text-lg font-bold text-[#292824] flex items-center gap-2">
                 Add New Eco Product
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-[#647564]">
                 Register sustainable building materials into the live catalog
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function AddProductModal({
 
             <button
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors touch-target"
+              className="p-2 rounded-xl text-[#647564] hover:text-[#292824] hover:bg-white transition-colors touch-target"
               aria-label="Close"
             >
               <X className="w-5 h-5" />
@@ -181,7 +181,7 @@ export default function AddProductModal({
 
           {/* Product Title */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
               Product Title <span className="text-emerald-400">*</span>
             </label>
             <input
@@ -190,7 +190,7 @@ export default function AddProductModal({
               placeholder="e.g. Cross-Laminated Timber (CLT) Structural Slabs"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-3.5 py-2.5 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -199,13 +199,13 @@ export default function AddProductModal({
             
             {/* Category Dropdown */}
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
                 Category <span className="text-emerald-400">*</span>
               </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-3.5 py-2.5 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 {availableCategories.map((cat) => (
                   <option key={cat} value={cat}>
@@ -217,11 +217,11 @@ export default function AddProductModal({
 
             {/* Unit Price */}
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
                 Unit Price ({currentCurrency === 'USD' ? '$ USD' : '₹ INR'}) <span className="text-emerald-400">*</span>
               </label>
               <div className="relative">
-                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-semibold">
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#647564] text-sm font-semibold">
                   {currentCurrency === 'USD' ? '$' : '₹'}
                 </span>
                 <input
@@ -232,20 +232,20 @@ export default function AddProductModal({
                   placeholder="45.00"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  className="w-full pl-8 pr-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full pl-8 pr-3.5 py-2.5 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 />
               </div>
             </div>
 
             {/* Unit of Measure */}
             <div>
-              <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
                 Unit Metric
               </label>
               <select
                 value={unit}
                 onChange={(e) => setUnit(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full px-3.5 py-2.5 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value="sq.m">sq.m (Square Meter)</option>
                 <option value="sq.ft">sq.ft (Square Foot)</option>
@@ -261,10 +261,10 @@ export default function AddProductModal({
 
           {/* Eco-Rating Picker (1 to 5 Stars) */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
               Eco-Rating ({ecoRating} / 5 Stars) <span className="text-emerald-400">*</span>
             </label>
-            <div className="flex items-center gap-2 p-3 bg-slate-800/80 rounded-xl border border-slate-700">
+            <div className="flex items-center gap-2 p-3 bg-white/80 rounded-xl border border-[#C5D5C1]">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
                   type="button"
@@ -277,12 +277,12 @@ export default function AddProductModal({
                     className={`w-6 h-6 transition-colors ${
                       star <= ecoRating
                         ? 'text-amber-400 fill-amber-400'
-                        : 'text-slate-600 hover:text-slate-400'
+                        : 'text-slate-600 hover:text-[#647564]'
                     }`}
                   />
                 </button>
               ))}
-              <span className="text-xs text-slate-400 ml-2 font-medium">
+              <span className="text-xs text-[#647564] ml-2 font-medium">
                 {ecoRating === 5 && '🌟 Maximum Circular & Low-Carbon Performance'}
                 {ecoRating === 4 && '🌿 High Sustainability Standard'}
                 {ecoRating <= 3 && '🍃 Eco-Compliant'}
@@ -292,7 +292,7 @@ export default function AddProductModal({
 
           {/* Sustainability Certifications (Checkboxes) */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
               Sustainability Certifications
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -304,7 +304,7 @@ export default function AddProductModal({
                     className={`flex items-center gap-2.5 p-2.5 rounded-xl border cursor-pointer select-none transition-colors ${
                       checked
                         ? 'bg-emerald-950/70 border-emerald-500/60 text-emerald-200'
-                        : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-750'
+                        : 'bg-white/80 border-[#C5D5C1] text-[#405847] hover:bg-slate-750'
                     }`}
                   >
                     <input
@@ -316,7 +316,7 @@ export default function AddProductModal({
                     <div
                       className={`w-4 h-4 rounded flex items-center justify-center border transition-colors ${
                         checked
-                          ? 'bg-emerald-500 border-emerald-500 text-white'
+                          ? 'bg-emerald-500 border-emerald-500 text-[#292824]'
                           : 'border-slate-500'
                       }`}
                     >
@@ -332,7 +332,7 @@ export default function AddProductModal({
           {/* Image URL with Preview & Fallback */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
-              <label className="text-xs font-semibold text-slate-300 uppercase tracking-wider">
+              <label className="text-xs font-semibold text-[#405847] uppercase tracking-wider">
                 Image URL (With Default Fallback)
               </label>
               <button
@@ -350,9 +350,9 @@ export default function AddProductModal({
                 placeholder="https://images.unsplash.com/photo-..."
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
-                className="flex-1 px-3.5 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="flex-1 px-3.5 py-2.5 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
-              <div className="w-12 h-11 rounded-xl bg-slate-800 border border-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center">
+              <div className="w-12 h-11 rounded-xl bg-white border border-[#C5D5C1] overflow-hidden flex-shrink-0 flex items-center justify-center">
                 {imageUrl ? (
                   <img
                     src={imageUrl}
@@ -371,7 +371,7 @@ export default function AddProductModal({
 
           {/* Short Description */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold text-[#405847] uppercase tracking-wider mb-1.5">
               Short Description
             </label>
             <textarea
@@ -379,76 +379,76 @@ export default function AddProductModal({
               placeholder="Highlight circular lifecycle, thermal insulation, or structural benefits..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-3.5 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-3.5 py-2 bg-white border border-[#C5D5C1] rounded-xl text-sm text-[#292824] placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
           {/* Technical Specifications Section */}
-          <div className="pt-2 border-t border-slate-800">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
+          <div className="pt-2 border-t border-[#C5D5C1]">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#647564] mb-3 flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
               Technical Specifications (Optional)
             </h4>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div>
-                <label className="block text-slate-400 mb-1">Dimensions / Sizing</label>
+                <label className="block text-[#647564] mb-1">Dimensions / Sizing</label>
                 <input
                   type="text"
                   placeholder="e.g. 1200mm x 600mm x 25mm"
                   value={dimensions}
                   onChange={(e) => setDimensions(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 bg-white border border-[#C5D5C1] rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">Embodied Carbon Metric</label>
+                <label className="block text-[#647564] mb-1">Embodied Carbon Metric</label>
                 <input
                   type="text"
                   placeholder="e.g. -12.4 kg CO₂e / m² or 2.1 kg CO₂e"
                   value={embodiedCarbon}
                   onChange={(e) => setEmbodiedCarbon(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 bg-white border border-[#C5D5C1] rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">Durability / R-Value / Strength</label>
+                <label className="block text-[#647564] mb-1">Durability / R-Value / Strength</label>
                 <input
                   type="text"
                   placeholder="e.g. R-15 Thermal / Class A Fire Rating"
                   value={durability}
                   onChange={(e) => setDurability(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 bg-white border border-[#C5D5C1] rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-slate-400 mb-1">LEED / Green Building Points</label>
+                <label className="block text-[#647564] mb-1">LEED / Green Building Points</label>
                 <input
                   type="text"
                   placeholder="e.g. MR Credit 4 & EQ Credit 2"
                   value={leedContribution}
                   onChange={(e) => setLeedContribution(e.target.value)}
-                  className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full px-3 py-2 bg-white border border-[#C5D5C1] rounded-lg text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
             </div>
           </div>
 
           {/* Form Actions */}
-          <div className="pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-[#C5D5C1] flex items-center justify-end gap-3">
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs sm:text-sm font-medium border border-slate-700 transition-colors touch-target"
+              className="px-4 py-2.5 rounded-xl bg-white hover:bg-slate-700 text-[#405847] hover:text-[#292824] text-xs sm:text-sm font-medium border border-[#C5D5C1] transition-colors touch-target"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] touch-target"
+              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-[#292824] font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-emerald-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] touch-target"
             >
               <PlusCircle className="w-4 h-4" />
               <span>Publish & Save to Catalog</span>
