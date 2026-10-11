@@ -9,7 +9,7 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
   };
 
   return (
-    <div className={`relative overflow-hidden ${theme.heroBg} border-b border-slate-800/80 py-8 sm:py-12 transition-colors duration-700`}>
+    <div className={`relative overflow-hidden ${theme.heroBg} border-b border-[#C5D5C1] py-8 sm:py-12 transition-colors duration-700`}>
       {/* Subtle ambient glow circles */}
       <div className="absolute top-0 left-1/3 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2" />
       <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none translate-y-1/2" />
@@ -21,19 +21,19 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
 ```
 
         {/* Clean, Modern Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#292824] tracking-tight leading-none">
           <span className={`text-transparent bg-clip-text bg-gradient-to-r ${theme.accentGradientText}`}>
             EcoConstruct Pro
           </span>
         </h1>
 
         {/* Clean Subtitle as specified */}
-        <p className="mt-3 text-lg sm:text-xl font-medium text-slate-300 max-w-2xl mx-auto tracking-wide">
+        <p className="mt-3 text-lg sm:text-xl font-medium text-[#405847] max-w-2xl mx-auto tracking-wide">
           Sustainable Building Materials & Circular Solutions
         </p>
 
         {/* Concise helper description */}
-        <p className="mt-2 text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+        <p className="mt-2 text-xs sm:text-sm text-[#647564] max-w-xl mx-auto">
           Direct verified catalog for zero-carbon architecture, low-VOC insulation, and circular composites.
         </p>
 
@@ -41,7 +41,7 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <a
             href="#catalog"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-emerald-600/30 transition-all hover:scale-[1.02] active:scale-[0.98] touch-target"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#078765] hover:bg-[#067455] text-white font-medium text-xs sm:text-sm border border-[#078765] transition-colors touch-target"
           >
             <span>Browse Catalog</span>
             <ArrowRight className="w-4 h-4" />
@@ -51,7 +51,7 @@ export default function HeroBanner({ onOpenAddModal, theme, currentTimePeriod })
             onClick={onOpenAddModal}
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#078765] hover:bg-[#067455] text-white hover:text-white font-medium text-xs sm:text-sm border border-slate-700 transition-colors touch-target"
           >
-            <PlusCircle className="w-4 h-4 text-emerald-400" />
+            <PlusCircle className="w-4 h-4 text-white" />
             <span>+ Add Material</span>
           </button>
         </div>
